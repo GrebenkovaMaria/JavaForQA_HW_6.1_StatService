@@ -11,11 +11,7 @@ public class StatService {
     }
 
     public int calculateAverage(int[] monthsSales) {
-        int sum = 0;
-        for (int monthsSale : monthsSales) {
-            sum += monthsSale;
-        }
-        int averageSum = sum / (monthsSales.length);
+        int averageSum = calculateSum(monthsSales) / (monthsSales.length);
         return averageSum;
     }
 
@@ -31,38 +27,29 @@ public class StatService {
 
     public int findLastMinMonth(int[] monthsSales) {
         int min = monthsSales[0];
-        int monthMin = 1;
+        int monthMin = 0;
         for (int monthsSale : monthsSales) {
             if (monthsSale < min) min = monthsSale;
-        }
-        for (int i = 0; monthsSales[i] > min; i++) {
-            monthMin = monthMin + 1;
+            else monthMin = monthMin +1;
+            //while (monthsSale > min )
+              //  monthMin = monthMin + 1;
+                //break;
         }
         return monthMin;
     }
 
     public int countMonthsLessAverage(int[] monthsSales) {
-        int sum = 0;
         int monthsLessAverage = 0;
         for (int monthsSale : monthsSales) {
-            sum += monthsSale;
-        }
-        int averageSum = sum / (monthsSales.length);
-        for (int monthsSale : monthsSales) {
-            if (monthsSale > averageSum) monthsLessAverage = monthsLessAverage + 1;
+            if (monthsSale > calculateAverage(monthsSales)) monthsLessAverage = monthsLessAverage + 1;
         }
         return monthsLessAverage;
     }
 
     public int countMonthsMoreAverage(int[] monthsSales) {
-        int sum = 0;
         int monthsMoreAverage = 0;
         for (int monthsSale : monthsSales) {
-            sum += monthsSale;
-        }
-        int averageSum = sum / (monthsSales.length);
-        for (int monthsSale : monthsSales) {
-            if (monthsSale < averageSum) monthsMoreAverage = monthsMoreAverage + 1;
+            if (monthsSale < calculateAverage(monthsSales)) monthsMoreAverage = monthsMoreAverage + 1;
         }
         return monthsMoreAverage;
     }

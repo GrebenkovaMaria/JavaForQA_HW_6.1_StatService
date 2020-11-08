@@ -1,10 +1,12 @@
 package ru.netology.stats;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatServiceTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shoulsCalculateSumOfMassive() {
     StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -13,7 +15,7 @@ class StatServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCalculateAverage() {
         StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -22,7 +24,7 @@ class StatServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldFindLastMonthWithMaximumOfAmount() {
         StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -31,7 +33,7 @@ class StatServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldFindLastMonthWithMinimumOfAmount() {
         StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -40,7 +42,7 @@ class StatServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCountMonthsWithAmountLessAverage() {
         StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -49,7 +51,7 @@ class StatServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCountMonthsWithAmountMoreAverage() {
         StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
