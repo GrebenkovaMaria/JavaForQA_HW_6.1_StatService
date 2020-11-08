@@ -19,8 +19,8 @@ class StatServiceTest {
     void shouldCalculateAverage() {
         StatService service = new StatService();
         int[] monthsSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected  = 15;
-        int actual = service.calculateAverage(monthsSales) ;
+        double expected  = 15;
+        double actual = service.calculateAverage(monthsSales) ;
         assertEquals(expected, actual);
     }
 
