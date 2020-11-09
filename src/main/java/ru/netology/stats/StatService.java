@@ -16,27 +16,20 @@ public class StatService {
     }
 
     public int findLastMaxMonth(int[] monthsSales) {
-        int max = 0;
-        int monthMax = 0;
-        for (int monthsSale : monthsSales) {
-            if (monthsSale > max) max = monthsSale;
-            else monthMax = monthMax + 1;
-        }
-        return monthMax;
+        int maxMonth = 0;
+        for (int i = 1; i < monthsSales.length; i++)
+            if (monthsSales[i] >= monthsSales[maxMonth])
+            maxMonth = i;
+        return maxMonth + 1;
     }
 
     public int findLastMinMonth(int[] monthsSales) {
-        int min = monthsSales[0];
-        int monthMin = 0;
-        for (int monthsSale : monthsSales) {
-            if (monthsSale < min) min = monthsSale;
-            else monthMin = monthMin +1;
-            //while (monthsSale > min )
-              //  monthMin = monthMin + 1;
-                //break;
+        int minMonth = 0;
+        for (int i = 1; i < monthsSales.length; i++)
+            if ( monthsSales[i] <= monthsSales[minMonth])
+                minMonth = i;
+            return minMonth + 1;
         }
-        return monthMin;
-    }
 
     public int countMonthsLessAverage(int[] monthsSales) {
         int monthsLessAverage = 0;
